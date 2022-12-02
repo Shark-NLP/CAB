@@ -148,7 +148,7 @@ We use 1×80GB A100 to train both FastSpeech 2 and Transformer TTS models.
 ```bash
 fairseq-train ${FEATURE_MANIFEST_ROOT} --save-dir ${SAVE_DIR} \
   --config-yaml config.yaml --train-subset train --valid-subset dev \
-  --num-workers 4 --max-tokens 30000 --max-update 200000 \
+  --num-workers 4 --max-sentences 6 --max-update 200000 \
   --task text_to_speech --criterion tacotron2 --arch tts_transformer \
   --clip-norm 5.0 --n-frames-per-step 4 --bce-pos-weight 5.0 \
   --dropout 0.1 --attention-dropout 0.1 --activation-dropout 0.1 \
