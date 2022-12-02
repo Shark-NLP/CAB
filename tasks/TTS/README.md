@@ -98,26 +98,38 @@ NUMEXPR_MAX_THREADS=20 python -m examples.speech_synthesis.preprocessing.get_ljs
 ```
 
 ### Fastspeech 2 Spectrograms Extraction
+Because FastSpeech 2 needs prediction of duration. We here provide two duration computation tools for duration extraction:
+
+If using `g2pE` to compute durations, download [`g2pE`](https://dl.fbaipublicfiles.com/fairseq/s2/ljspeech_mfa.zip) and put it in `TEXT_GRID_ZIP_PATH`.
 ```bash
 
 AUDIO_MANIFEST_ROOT=<path>
 FEATURE_MANIFEST_ROOT=<path>
-ID_TO_UNIT_TSV=<path>
 TEXT_GRID_ZIP_PATH=<path>
 NUMEXPR_MAX_THREADS=20 python -m examples.speech_synthesis.preprocessing.get_feature_manifest \
   --audio-manifest-root ${AUDIO_MANIFEST_ROOT} \
   --output-root ${FEATURE_MANIFEST_ROOT} \
   --ipa-vocab --use-g2p --add-fastspeech-targets \
-  --textgrid-zip ${TEXT_GRID_ZIP_PATH} --id-to-units-tsv ${ID_TO_UNIT_TSV}  
-    \
+  --textgrid-zip ${TEXT_GRID_ZIP_PATH} 
 ```
 
-For convenience, use the pre-computed
-[force-alignment](https://dl.fbaipublicfiles.com/fairseq/s2/ljspeech_mfa.zip) from
-[Montreal Forced Aligner](https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner) and
-[pseudo-text units](https://dl.fbaipublicfiles.com/fairseq/s2/ljspeech_hubert.tsv) from
-[HuBERT](https://github.com/pytorch/fairseq/tree/main/examples/hubert). You can also generate them by yourself using
-a different software or model.
+If using `units` to compute durations, download [`units`](https://dl.fbaipublicfiles.com/fairseq/s2/ljspeech_hubert.tsv) and put it in `ID_TO_UNIT_TSV`.
+```bash
+
+AUDIO_MANIFEST_ROOT=<path>
+FEATURE_MANIFEST_ROOT=<path>
+ID_TO_UNIT_TSV=<path>
+NUMEXPR_MAX_THREADS=20 python -m examples.speech_synthesis.preprocessing.get_feature_manifest \
+  --audio-manifest-root ${AUDIO_MANIFEST_ROOT} \
+  --output-root ${FEATURE_MANIFEST_ROOT} \
+  --ipa-vocab --use-g2p --add-fastspeech-targets \
+  --id-to-units-tsv ${ID_TO_UNIT_TSV}  
+```
+
+You can also generate durations by yourself using
+a different software or model:
+[Montreal Forced Aligner](https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner) to get `g2pE` duration or 
+[HuBERT](https://github.com/pytorch/fairseq/tree/main/examples/hubert) to get `units` duration.
 
 ### Transformer-TTS Feature Extraction
 ```bash
