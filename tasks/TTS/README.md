@@ -100,7 +100,7 @@ NUMEXPR_MAX_THREADS=20 python -m examples.speech_synthesis.preprocessing.get_ljs
 ### Fastspeech 2 Spectrograms Extraction
 Because FastSpeech 2 needs prediction of duration. We here provide two duration computation tools for duration extraction:
 
-If using `g2pE` to compute durations, download [`g2pE`](https://dl.fbaipublicfiles.com/fairseq/s2/ljspeech_mfa.zip) and put it in `TEXT_GRID_ZIP_PATH`.
+If using `g2pE` to compute durations, download [`g2pE`](https://dl.fbaipublicfiles.com/fairseq/s2/ljspeech_mfa.zip) and set `TEXT_GRID_ZIP_PATH` to the path of `ljspeech_mfa.zip`.
 ```bash
 
 AUDIO_MANIFEST_ROOT=<path>
@@ -113,7 +113,7 @@ NUMEXPR_MAX_THREADS=20 python -m examples.speech_synthesis.preprocessing.get_fea
   --textgrid-zip ${TEXT_GRID_ZIP_PATH} 
 ```
 
-If using `units` to compute durations, download [`units`](https://dl.fbaipublicfiles.com/fairseq/s2/ljspeech_hubert.tsv) and put it in `ID_TO_UNIT_TSV`.
+If using `units` to compute durations, download [`units`](https://dl.fbaipublicfiles.com/fairseq/s2/ljspeech_hubert.tsv) and set `ID_TO_UNIT_TSV` to the path of `ljspeech_hubert.tsv`.
 ```bash
 
 AUDIO_MANIFEST_ROOT=<path>
