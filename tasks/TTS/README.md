@@ -131,6 +131,8 @@ a different software or model:
 [Montreal Forced Aligner](https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner) to get `g2pE` duration or 
 [HuBERT](https://github.com/pytorch/fairseq/tree/main/examples/hubert) to get `units` duration.
 
+**NOTE**: In our paper, results of FastSpeech 2 are produced by `g2pE` durations.
+
 ### Transformer-TTS Feature Extraction
 ```bash
 python -m examples.speech_synthesis.preprocessing.get_feature_manifest \
