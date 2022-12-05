@@ -183,6 +183,7 @@ python scripts/average_checkpoints.py --inputs ${SAVE_DIR} \
   --output ${CHECKPOINT_PATH}
 ```
 Or you can just use the best checkpoint as our paper's setting. In this case, `CHECKPOINT_PATH=${SAVE_DIR}/checkpoint_best.pt`.
+Then generate the waveforms to the `EVAL_OUTPUT_ROOT`:
 ```bash
 EVAL_OUTPUT_ROOT=$SAVE_DIR/avg
 python -m examples.speech_synthesis.generate_waveform ${FEATURE_MANIFEST_ROOT} \
