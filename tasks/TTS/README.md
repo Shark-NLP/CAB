@@ -181,7 +181,9 @@ CHECKPOINT_PATH=${SAVE_DIR}/checkpoint_${CHECKPOINT_NAME}.pt
 python scripts/average_checkpoints.py --inputs ${SAVE_DIR} \
   --num-epoch-checkpoints 5 \
   --output ${CHECKPOINT_PATH}
-
+```
+Or you can just use the best checkpoint as our paper's setting. In this case, `CHECKPOINT_PATH=${SAVE_DIR}/checkpoint_best.pt`.
+```bash
 EVAL_OUTPUT_ROOT=$SAVE_DIR/avg
 python -m examples.speech_synthesis.generate_waveform ${FEATURE_MANIFEST_ROOT} \
   --config-yaml config.yaml --gen-subset ${SPLIT} --task text_to_speech \
