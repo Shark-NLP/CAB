@@ -191,6 +191,16 @@ python -m examples.speech_synthesis.generate_waveform ${FEATURE_MANIFEST_ROOT} \
 
 ## Automatic Evaluation
 We only use MCD/MSD metrics. You can also use other automatic metrics following the guidance of original files.
+
+First generate the evaluation file:
+```bash
+python -m examples.speech_synthesis.evaluation.get_eval_manifest \
+  --generation-root ${EVAL_OUTPUT_ROOT} \
+  --audio-manifest ${AUDIO_MANIFEST_ROOT}/${SPLIT}.audio.tsv \
+  --output-path ${EVAL_OUTPUT_ROOT}/eval.tsv \
+  --vocoder griffin_lim --audio-format wav \
+  --use-resynthesized-target 
+```
 #### MCD/MSD metric
 ```bash
 python -m examples.speech_synthesis.evaluation.eval_sp \
