@@ -182,10 +182,11 @@ python scripts/average_checkpoints.py --inputs ${SAVE_DIR} \
   --num-epoch-checkpoints 5 \
   --output ${CHECKPOINT_PATH}
 
+EVAL_OUTPUT_ROOT=$SAVE_DIR/avg
 python -m examples.speech_synthesis.generate_waveform ${FEATURE_MANIFEST_ROOT} \
   --config-yaml config.yaml --gen-subset ${SPLIT} --task text_to_speech \
   --path ${CHECKPOINT_PATH} --max-tokens 50000 --spec-bwd-max-iter 32 \
-  --dump-waveforms
+  --dump-waveforms --dump-target --results-path $EVAL_OUTPUT_ROOT
 ```
 
 ## Automatic Evaluation
