@@ -66,6 +66,7 @@ class EfficientTransformerEncoder(AbstractEncoder):
         self._embed_layer_norm = embed_layer_norm
         self._max_pos = max_pos
         self._share_layers = share_layers
+        self._kwargs = kwargs
 
         self._special_tokens = None
         self._embed, self._pos_embed, self._embed_norm, self._embed_dropout, self._norm = None, None, None, None, None
@@ -101,7 +102,8 @@ class EfficientTransformerEncoder(AbstractEncoder):
                 dropout=self._dropout,
                 attention_dropout=self._attention_dropout,
                 activation=self._activation,
-                normalize_before=self._normalize_before
+                normalize_before=self._normalize_before,
+                **self._kwargs
                 )
             self._layers = [self._layer for _ in range(self._num_layers)]
         else:
@@ -113,7 +115,8 @@ class EfficientTransformerEncoder(AbstractEncoder):
                 dropout=self._dropout,
                 attention_dropout=self._attention_dropout,
                 activation=self._activation,
-                normalize_before=self._normalize_before
+                normalize_before=self._normalize_before,
+                **self._kwargs
                 ) for _ in range(self._num_layers)])
         self._norm = nn.LayerNorm(self._d_model) if self._normalize_before else None
 
