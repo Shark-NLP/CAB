@@ -1,6 +1,6 @@
 from transformers import GPT2Tokenizer
 import sys
-tokenizer = GPT2Tokenizer.from_pretrained('cache')
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
 
 def tokenize(file):
