@@ -209,4 +209,4 @@ python -m examples.speech_synthesis.evaluation.get_eval_manifest \
 python -m examples.speech_synthesis.evaluation.eval_sp \
   ${EVAL_OUTPUT_ROOT}/eval.tsv --mcd --msd
 ```
-
+The numbers in `dist_per_syn_frm` column is the final results.
