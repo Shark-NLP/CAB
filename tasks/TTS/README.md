@@ -2,6 +2,11 @@
 This task requires models to convert input text sequences, descriptions, or narrations produced by a single speaker, to synthesized audio clips sharing the same timbre as the provided speaker.
 We adopt Mean Cepstral Distortion (MCD) and Mel Spectral Distortion (MSD) for objective evaluation.
 
+<div align="center">
+  
+<b>Noncausal Self</b>
+
+</div>
 
 <table align="center"> 
 <tr><th>FastSpeech 2</th><th>Transformer-TTS</th></tr> 
@@ -17,6 +22,7 @@ local          | 3.419       | 1.970
 LongShort      | 3.436       | 1.996   
 Performer      | 3.437       | 1.983 
 LARA           | 3.463       | 2.012
+FlashAttention  | 3.472       | 2.016
 Nyströmformer  | 3.557       | 2.036 
 
 </td><td> 
@@ -28,6 +34,7 @@ local          | 4.015       | 2.164
 S4D            | 4.017       | 2.195
 cosFormer      | 4.030       | 2.160 
 ProbSparse     | 4.034       | 2.161 
+FlashAttention | 4.077       | 2.175
 ABC            | 4.085       | 2.204 
 Performer      | 4.115       | 2.198 
 LARA           | 4.116       | 2.209 
@@ -51,13 +58,14 @@ Model          | MCD↓        | MSD↓
 S4D            | **4.030**       | **2.188**
 LongShort      | 4.039       | 2.195
 ABC            | 4.058       | 2.189
+FlashAttention | 4.066       | 2.207
 local          | 4.141       | 2.220
 
 </table>
 
 <div align="center">
   
-<b>Causal Self</b>
+<b>Causal Cross</b>
 
 </div>
 
