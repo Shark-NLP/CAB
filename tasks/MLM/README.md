@@ -6,7 +6,8 @@ We use Perplexity (PPL) as evaluation metric and set the context length to 2,048
 
 Model        | PPL↓
 ---------    | ---:
-LongShort    | **3.38**
+FlashAttention | **3.26**
+LongShort    | 3.38
 local        | 4.18
 cosFormer    | 5.25
 Nyströmformer| 6.32
