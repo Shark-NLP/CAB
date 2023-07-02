@@ -1,5 +1,5 @@
 # <img src="imgs/logo.jpg" width="8%" alt="" align=center /> Comprehensive Attention Benchmark (CAB)  
-CAB aims to provide a comprehensive evaluation of efficient attentions. CAB contains seven real-world tasks from different research areas to evaluate efficient attentions under four fine-grained attention patterns. See our paper *[CAB: Comprehensive Attention Benchmarking on Long Sequence Modeling"](https://arxiv.org/pdf/2210.07661.pdf)* for more details about CAB. 
+CAB aims to provide a comprehensive evaluation of efficient attentions. CAB contains seven real-world tasks from different research areas to evaluate efficient attentions under four fine-grained attention patterns. See our paper *[CAB: Comprehensive Attention Benchmarking on Long Sequence Modeling (ICML 2023)"](https://openreview.net/pdf?id=AXt40tAbif)* for more details about CAB. 
 
 **We are actively extending CAB with more long range tasks and efficient models, and any suggestion on the suitable tasks and efficient models with reproducible codebases is welcomed. Please send us an email if you have any suggestion on improving CAB. We will buy you a cup of thank you Nayuki (奈雪) or Hey Tea (喜茶) for help improving this work :).**
 
@@ -53,6 +53,7 @@ Performer       | -0.282    | -0.088    | 0.439     | -1.211    | -0.285      | 
 Nyströmformer   | -2.011    | -0.321    | 0.088     | 0.481     | -0.440      | -0.416
 ProbSparse      | 0.705     | -0.246    | -0.697    | -2.408    | -0.661      | -0.637
 ABC             | 0.043     | -0.678    | -2.525    | 0.414     | -0.686      | -0.662
+FlashAttention  | -0.383    | -0.201    | -5.503    | 0.530     | -1.389      | -1.365
 S4D             | **1.035** | -         | 0.457     | 0.176     | -           | -
   
 </div>
@@ -64,6 +65,7 @@ Model           | TTS       | Sum       | LM        | Avg.     | $\Delta$
 --------------- | --------: | --------: | --------: |  --------:  | :---:
 S4D             | **1.030**     | **1.143**     | 0.780     | **0.985** | -
 LongShort       | 0.701     | 0.340 | **0.812** | 0.617     | -
+FlashAttention  | -0.033    | 0.562 | 0.751     | 0.426     | -
 local           | -1.361    | 0.337     | 0.305     | -0.239 | -
 ABC             | **0.707** | -1.461    | -1.117    | -0.623 | -
 _vanilla_       | _-0.047_  | _0.784_   | -         | -      | -
@@ -138,11 +140,11 @@ Please follow the experimental setting to evaluate your method. For the hyperpar
 
 # Citation
 ```
-@article{zhang2022cab,
+@inproceedings{zhang2023cab,
   title={CAB: Comprehensive Attention Benchmarking on Long Sequence Modeling},
-  author={Zhang, Jun and Jiang, Shuyang and Feng, Jiangtao and Zheng, Lin and Kong, Lingpeng},
-  journal={arXiv preprint arXiv:2210.07661},
-  year={2022}
+  author={Jun Zhang and Shuyang Jiang and Jiangtao Feng and Lin Zheng and Lingpeng Kong},
+  booktitle={International Conference on Machine Learning},
+  year={2023}
 }
 ```
 
