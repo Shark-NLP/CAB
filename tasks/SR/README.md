@@ -15,7 +15,7 @@ LongShort    | 23.28    | 0.681
 Nyströmformer| 23.20    | 0.679 
 ProbSparse   | 22.98 	| 0.667 
 ABC	         | 22.54    | 0.635 
-
+FlashAttention | 21.82  | 0.583
 </div>
 
 # Dataset Statistics
