@@ -9,6 +9,7 @@ Model           | PPL↓
 --------------- | :--------: 
 LongShort       | **15.52**
 S4D             | 15.78
+FlashAttention  | 16.02
 local           | 19.73 
 ABC             | 29.13
 
